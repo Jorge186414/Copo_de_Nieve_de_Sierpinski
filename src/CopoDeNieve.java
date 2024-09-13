@@ -23,7 +23,10 @@ public class CopoDeNieve extends JPanel {
         ventana.setVisible(true);
     }
 
-    protected void graficarCopo(Graphics g) {
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        
         double xp1 = 400, yp1 = 100;
         double xp2 = 200, yp2 = 500;
         double xp3 = 600, yp3 = 500;
@@ -39,7 +42,7 @@ public class CopoDeNieve extends JPanel {
             g.drawLine((int) xp1, (int) yp1, (int) xp2, (int) yp2);
         } else {
             double dx = (xp2 - xp1) / 3;
-            double dy = (yp2 - yp1 / 3);
+            double dy = (yp2 - yp1) / 3;
 
             double x1 = xp1 + dx;
             double y1 = yp1 + dy;
